@@ -10,6 +10,7 @@ public class Luncher {
     private static String configFilePath = "config.properties";
     
     public static void main(String[] args) throws IOException {
+		System.out.println();
     	if((args.length == 3) && (args[0].compareTo("-anonymize") == 0)){
     		Anonymizer anonymizer = new Anonymizer(configFilePath);
     		anonymizer.anonymise(args[1], args[2]);

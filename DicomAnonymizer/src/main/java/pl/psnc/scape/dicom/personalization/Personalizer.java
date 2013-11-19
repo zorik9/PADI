@@ -16,7 +16,7 @@ import pl.psnc.scape.dicom.file.Utils;
 public class Personalizer {
     public static void personalize(String dicomFilePath, String tagsFilePath) {
     	if(Utils.exist(dicomFilePath)){
-    		if(Utils.exist(tagsFilePath)){   
+    		if(Utils.exist(tagsFilePath)){
     			personalizeDicom(dicomFilePath, tagsFilePath);
     		}
         	else {

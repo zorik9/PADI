@@ -33,15 +33,9 @@ public class Anonymizer {
 
     public void anonymise(String dicomFilePath, String tagsFilePath) {
     	if(Utils.exist(dicomFilePath)){
-    		if(Utils.exist(tagsFilePath)){
-		    	if(configuration != null){
-		    		anonymiseDicom(dicomFilePath, tagsFilePath);
-		    	}
-    		}
-        	else {
-        		System.out.println("File not found: " + tagsFilePath);
-        		System.out.println();
-        	}
+	    	if(configuration != null){
+	    		anonymiseDicom(dicomFilePath, tagsFilePath);
+	    	}
     	}
     	else {
     		System.out.println("File not found: " + dicomFilePath);
