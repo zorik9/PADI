@@ -69,7 +69,7 @@
                   <fileset dir="" includes="*.properties"/> 
               </copy> 
               <copy todir="target" flatten="true" overwrite="true" verbose="true" failonerror="true"> 
-                  <fileset dir="" includes="*.bat"/> 
+                  <fileset dir="" includes="/bat/*.bat"/> 
               </copy> 
               </tasks> 
             </configuration> 
