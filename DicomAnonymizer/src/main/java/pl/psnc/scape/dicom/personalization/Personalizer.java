@@ -20,7 +20,7 @@ public class Personalizer {
     			personalizeDicom(dicomFilePath, tagsFilePath);
     		}
         	else {
-        		System.out.println("File not found sss: " + tagsFilePath);
+        		System.out.println("File not found: " + tagsFilePath);
         		System.out.println();
         	}
     	}
