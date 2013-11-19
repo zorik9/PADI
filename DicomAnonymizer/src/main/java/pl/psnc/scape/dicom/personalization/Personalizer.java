@@ -16,11 +16,11 @@ import pl.psnc.scape.dicom.file.Utils;
 public class Personalizer {
     public static void personalize(String dicomFilePath, String tagsFilePath) {
     	if(Utils.exist(dicomFilePath)){
-    		if(Utils.exist(tagsFilePath)){
+    		if(Utils.exist(tagsFilePath)){   
     			personalizeDicom(dicomFilePath, tagsFilePath);
     		}
         	else {
-        		System.out.println("File not found: " + tagsFilePath);
+        		System.out.println("File not found sss: " + tagsFilePath);
         		System.out.println();
         	}
     	}
