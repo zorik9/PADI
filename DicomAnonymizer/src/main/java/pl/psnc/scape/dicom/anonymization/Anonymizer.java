@@ -2,6 +2,7 @@ package pl.psnc.scape.dicom.anonymization;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import org.dcm4che2.data.DicomElement;
@@ -79,5 +80,46 @@ public class Anonymizer {
 	        DicomWriter.write(dicomObject, dicomFilePath);
 	        TagsArchivizer.save(removedTags, dicomFilePath, tagsFilePath);
         }
+    }
+
+    public void showTag(String dicomFilePath, int tag) {
+    	DicomObject dicomObject = DicomReader.read(dicomFilePath);
+        if(dicomObject != null){
+	        DicomElement dicomElement = dicomObject.get(tag);
+	        if(dicomElement.length() >= 0){
+	        	String tagValue = dicomObject.getString(tag);
+		    	String tagName = ElementDictionary.getDictionary().nameOf(tag).replace(" ", "");
+		    	System.out.println(tagName +  "=" + tagValue);
+	        }
+            System.out.println();
+        }
+    }
+
+
+    public void printAllTags(String dicomFilePath) {
+    	DicomObject dicomObject = DicomReader.read(dicomFilePath);
+        if(dicomObject != null){
+        	Iterator<DicomElement> i = dicomObject.iterator();
+        	DicomElement de; 
+			while((de = i.next()) != null){
+		    	System.out.println(de);
+			}
+        }
+    }
+    
+    public String getAccessionNumberTag(String dicomFilePath) {
+    	DicomObject dicomObject = DicomReader.read(dicomFilePath);
+        if(dicomObject != null){
+        	Iterator<DicomElement> i = dicomObject.iterator();
+        	DicomElement de; 
+        			while((de = i.next()) != null){
+        				if(de.toString().contains("0008,0050")){
+        		        	System.out.println(de.toString());
+        					return de.toString();
+        				}
+        			}
+        	
+        }
+		return null;
     }
 }

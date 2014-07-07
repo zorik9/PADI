@@ -8,9 +8,11 @@ import pl.psnc.scape.dicom.personalization.Personalizer;
 
 public class Luncher {
     private static String configFilePath = "config.properties";
-    
+
     public static void main(String[] args) throws IOException {
-		System.out.println();
+    	Anonymizer a = new Anonymizer(configFilePath);
+    	
+    	System.out.println();
     	if((args.length == 3) && (args[0].compareTo("-anonymize") == 0)){
     		Anonymizer anonymizer = new Anonymizer(configFilePath);
     		anonymizer.anonymise(args[1], args[2]);
@@ -38,7 +40,6 @@ public class Luncher {
 		System.out.println();
 		System.out.println("Parameters:");
 		System.out.println("-anonymize <dicom_file> <anonymized_tag_file>");
-		System.out.println(" anonymizes DICOM file and saves anonymized tag values in text file.");
 		System.out.println("-anonymize_dir <directory> ");
 		System.out.println("-personalize <dicom_file> <anonymized_tag_file>");
 		System.out.println("-personalize_dir <directory>");
