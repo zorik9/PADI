@@ -61,7 +61,7 @@ public class Configuration {
         }
     }
 
-    private int getDicomTag(String propertiesTag) {
+    public int getDicomTag(String propertiesTag) {
         Pattern pattern = Pattern.compile("\\((.*?)\\)");
         Matcher matcher = pattern.matcher(propertiesTag);
         matcher.find();
@@ -87,6 +87,15 @@ public class Configuration {
 
     public List<ConfigurationElement> getConfigurationElementList() {
         return configurationElementList;
+    }
+
+    public ConfigurationElement getConfigurationElement(String tag) {
+    	for(ConfigurationElement ce : getConfigurationElementList()){
+    		if(ce.getConfigTag().compareTo(tag) == 0){
+    			return ce;
+    		}
+		}
+    	return null;
     }
 
     public List<Integer> getTagsToAnonymise() {
