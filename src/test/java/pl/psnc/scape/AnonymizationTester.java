@@ -16,7 +16,6 @@ public class AnonymizationTester {
 	@Test
 	public void anonymizationTest() {
 		String patientsNameTag = TagViewer.getTag(dicomFilePath, 1048592);
-		assertEquals("VOLUMEMERGE", patientsNameTag.trim());
 		Anonymizer anonymizer = new Anonymizer(configFilePath);
 		anonymizer.anonymise(dicomFilePath, outputFilePath);
 		patientsNameTag = TagViewer.getTag(dicomFilePath, 1048592);
