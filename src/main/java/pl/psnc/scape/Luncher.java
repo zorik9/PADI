@@ -2,6 +2,9 @@ package pl.psnc.scape;
 
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+
+
 import pl.psnc.scape.dicom.anonymization.Anonymizer;
 import pl.psnc.scape.dicom.personalization.Personalizer;
 

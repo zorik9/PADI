@@ -72,7 +72,7 @@
             <configuration> 
               <tasks> 
               <copy todir="target" flatten="true" overwrite="true" verbose="true" failonerror="true"> 
-                  <fileset dir="" includes="*.properties"/> 
+                  <fileset dir="" includes="/src/main/resources/*.properties"/> 
               </copy> 
               <copy todir="target" flatten="true" overwrite="true" verbose="true" failonerror="true"> 
                   <fileset dir="" includes="/bat/*.bat"/> 

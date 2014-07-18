@@ -2,6 +2,7 @@ package pl.psnc.scape;
 
 import static org.junit.Assert.assertEquals;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import pl.psnc.scape.dicom.anonymization.config.Configuration;
@@ -9,7 +10,8 @@ import pl.psnc.scape.dicom.file.TagViewer;
 
 
 public class TagViewerTester {
-    private static String configFilePath = "src/test/resources/config.properties";
+    static Logger logger = Logger.getLogger(TagViewerTester.class);
+    private static String configFilePath = "src/main/resources/config.properties";
     private static String filePath = "src/test/resources/sample.dcm";
     
 	@Test
@@ -22,8 +24,7 @@ public class TagViewerTester {
         
 		}
 	    else {
-	        System.out.println("No config file: " + configFilePath);
-			System.out.println();
+	    	logger.error("No config file: " + configFilePath);
 	    }
 	}
 }

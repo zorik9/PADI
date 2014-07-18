@@ -5,10 +5,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.dcm4che2.data.DicomElement;
 import org.dcm4che2.data.DicomObject;
 import org.dcm4che2.data.ElementDictionary;
 
+import pl.psnc.scape.ConfigTester;
+import pl.psnc.scape.TagViewerTester;
 import pl.psnc.scape.dicom.anonymization.config.Configuration;
 import pl.psnc.scape.dicom.file.DicomReader;
 import pl.psnc.scape.dicom.file.DicomWriter;
@@ -17,6 +20,7 @@ import pl.psnc.scape.dicom.file.Utils;
 
 
 public class Anonymizer {
+    static Logger logger = Logger.getLogger(Anonymizer.class);
     private Configuration configuration;
 
     public Anonymizer(String configFilePath) {        
@@ -26,8 +30,7 @@ public class Anonymizer {
 	        this.configuration = conf;
         }
         else {
-            System.out.println("No config file: " + configFilePath);
-    		System.out.println();
+        	logger.error("No config file: " + configFilePath);
         }
         
     }
@@ -39,8 +42,7 @@ public class Anonymizer {
 	    	}
     	}
     	else {
-    		System.out.println("File not found: " + dicomFilePath);
-    		System.out.println();
+        	logger.error("File not found: " + dicomFilePath);
     	}
     }
 
@@ -62,7 +64,7 @@ public class Anonymizer {
 	        List<Integer> tagsToAnonymise = configuration.getTagsToAnonymise();
 	        HashMap<String, String> removedTags = new HashMap<String, String>();
 
-            System.out.println(dicomFilePath);
+	        System.out.println(dicomFilePath);
 	        for (int tag : tagsToAnonymise) {
 	            if (dicomObject.contains(tag)) {
 	            	DicomElement dicomElement = dicomObject.get(tag);
@@ -75,7 +77,6 @@ public class Anonymizer {
 	            	}
 	            }
 	        }
-            System.out.println();
 
 	        DicomWriter.write(dicomObject, dicomFilePath);
 	        TagsArchivizer.save(removedTags, dicomFilePath, tagsFilePath);
@@ -91,7 +92,6 @@ public class Anonymizer {
 		    	String tagName = ElementDictionary.getDictionary().nameOf(tag).replace(" ", "");
 		    	System.out.println(tagName +  "=" + tagValue);
 	        }
-            System.out.println();
         }
     }
 

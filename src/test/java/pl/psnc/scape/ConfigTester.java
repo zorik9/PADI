@@ -2,13 +2,15 @@ package pl.psnc.scape;
 
 import static org.junit.Assert.assertEquals;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import pl.psnc.scape.dicom.anonymization.config.Configuration;
 	
 
 public class ConfigTester {
-    private static String configFilePath = "src/test/resources/config.properties";
+    static Logger logger = Logger.getLogger(ConfigTester.class);
+    private static String configFilePath = "src/main/resources/config.properties";
     
 	@Test
 	public void configurationFileTest() {
@@ -66,8 +68,7 @@ public class ConfigTester {
 	        assertEquals(528512, conf.getConfigurationElement("AdmittingDiagnosesDescription(0008,1080)").getDicomTag());
         }
         else {
-            System.out.println("No config file: " + configFilePath);
-    		System.out.println();
+        	logger.error("No config file: " + configFilePath);
         }
 	}
 
