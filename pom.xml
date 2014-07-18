@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pl.psnc.scape</groupId>
-  <artifactId>DicomAnonymizer</artifactId>
+  <artifactId>PADI</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>DicomAnonymizer</name>
+  <name>PADI</name>
   <url>http://maven.apache.org</url>
 
   <properties>
