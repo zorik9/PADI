@@ -1,17 +1,16 @@
 package pl.psnc.scape;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import pl.psnc.scape.dicom.anonymization.config.Configuration;
-import pl.psnc.scape.dicom.anonymization.config.ConfigurationElement;
 import pl.psnc.scape.dicom.file.TagViewer;
 
 
 public class TagViewerTester {
-    private static String configFilePath = "config.properties";
-    private static String filePath = "sample.dcm";
+    private static String configFilePath = "src/test/resources/config.properties";
+    private static String filePath = "src/test/resources/sample.dcm";
     
 	@Test
 	public void getTagTest() {

@@ -9,9 +9,9 @@ import pl.psnc.scape.dicom.file.TagViewer;
 
 
 public class AnonymizationTester {
-    private static String dicomFilePath = "sample.dcm";
-    private static String outputFilePath = "sample.txt";
-    private static String configFilePath = "config.properties";
+    private static String dicomFilePath = "src/test/resources/sample.dcm";
+    private static String outputFilePath = "src/test/resources/sample.txt";
+    private static String configFilePath = "src/test/resources/config.properties";
     
 	@Test
 	public void anonymizationTest() {

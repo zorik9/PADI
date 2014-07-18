@@ -1,15 +1,14 @@
 package pl.psnc.scape;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import pl.psnc.scape.dicom.anonymization.config.Configuration;
-import pl.psnc.scape.dicom.anonymization.config.ConfigurationElement;
-
+	
 
 public class ConfigTester {
-    private static String configFilePath = "config.properties";
+    private static String configFilePath = "src/test/resources/config.properties";
     
 	@Test
 	public void configurationFileTest() {
