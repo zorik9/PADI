@@ -19,18 +19,29 @@ This tool removes DICOM tags (specified in the configuration file: config.proper
 
 ### Use
 
-* anonymize.bat %dicom_file %anonymized_tag_file
- anonymizes DICOM file and saves anonymized tag values in text file.
+* anonymizes DICOM file and saves anonymized tag values in text file.
 
-* anonymize_dir.bat %directory
- anonymizes all DICOM files in specified directory and subdirectories and saves
- anonymized tag values in text file for each DICOM file.
+```bash
+anonymize.bat <dicom_file> <anonymized_tag_file>
+```
 
-* personalize.bat %dicom_file %anonymized_tag_file
- presonalizes DICOM file.
+* anonymizes all DICOM files in specified directory and subdirectories and saves anonymized tag values in text file for each DICOM file.
 
-* personalize_dir.bat %directory
- presonalizes all DICOM files in specified directory and subdirectories
+```bash
+anonymize_dir.bat <directory>
+```
+
+* presonalizes DICOM file.
+ 
+```bash
+personalize.bat <dicom_file> <anonymized_tag_file>
+```
+
+* presonalizes all DICOM files in specified directory and subdirectories
+ 
+```bash
+personalize_dir.bat <directory>
+```
 
 ## More information
 
