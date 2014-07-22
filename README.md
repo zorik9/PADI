@@ -4,7 +4,7 @@ Personalization and Anonymisation for DIcom
 
 ### What does PADI do?
 
-This tool removes DICOM tags (specified in the configuration file: config.properties) or adds DICOM tags (specified in text file) from/to the given DICOM file(s).
+This tool removes DICOM tags (specified in the configuration file: config.properties) or adds DICOM tags (specified in a text file) from/to the given DICOM file(s).
 
 ## Features and roadmap
 
