@@ -4,7 +4,7 @@
 
 	<groupId>pl.psnc.scape</groupId>
 	<artifactId>PADI</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<packaging>jar</packaging>
 
 	<name>PADI</name>
@@ -37,17 +37,14 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
+			<scope>test</scope>
 		</dependency>
 		
-		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>4.12</version>
-		</dependency>
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>
 		    <version>4.3.2.RELEASE</version>
+  			<scope>test</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -60,7 +57,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.8</version>
+			<version>1.14.8</version>
+			<scope>provided</scope>
 		</dependency>
 		
 		<!-- Required for FileUtils, being used in FileUtilities -->
@@ -96,12 +94,6 @@
 		    <version>4.3.2.RELEASE</version>
 		</dependency>
 		
-		<!-- Required for CLI -->
-		<dependency>
-			<groupId>com.beust</groupId>
-			<artifactId>jcommander</artifactId>
-			<version>1.30</version>
-		</dependency>
 	</dependencies>
 	
 	<repositories>
@@ -112,11 +104,6 @@
 		</repository>
 	</repositories>
 	<build>
-		<resources>
-			<resource>
-				<directory>/</directory>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
